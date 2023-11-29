@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: darkorange;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+#logo {
+    height: 50px;
+}
+
+nav {
+    width: 100%;
+    padding: 0 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    position: relative;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: darkgoldenrod;
+}
+
+nav li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+}
+
+nav li:hover ul {
+    display: flex;
+}
+
+nav li ul li a {
+    background-color: darkorange;
+    white-space: nowrap;
+    text-align: left;
+    box-sizing: border-box;
+    /* Bordas em volta do subitem exceto abaixo para não ficar duas bordas se encostando e parecendo uma borda grossa */
+    border-top: 1px solid rgba(0,0,0,1);
+    border-right: 1px solid rgba(0,0,0,1);
+    border-left: 1px solid rgba(0,0,0,1);
+}
+
+nav li ul li:last-child {
+    /* Borda abaixo do ultimo subitem */
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
