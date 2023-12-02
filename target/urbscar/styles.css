@@ -73,3 +73,29 @@ nav li ul li:last-child { /* Último item do submenu */
     /* Borda abaixo somente do ultimo subitem */
     border-bottom: 1px solid rgba(0, 0, 0, 1); /* Adiciona borda inferior */
 }
+
+.formCadLinha {
+    max-width: 600px; /* Ajuste conforme necessário */
+    padding: 20px;
+    border: 1px solid #c81e1e; /* Borda ao redor do contêiner */
+    border-radius: 8px; /* Cantos arredondados do contêiner */
+    margin: auto;
+}
+
+form {
+
+    border: 1px solid #804242; /* Borda ao redor do formulário */
+    padding: 15px;
+    border-radius: 8px; /* Cantos arredondados do formulário */
+}
+.bodyCadLinha{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.H1Linha{
+    text-align: center;
+}
