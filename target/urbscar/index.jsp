@@ -20,7 +20,7 @@
                     </ul>
                 </li>
                 <!-- Será necessário alterar cada item abaixo quando decidir qual será o nome de cada página-->
-                <li><a href="Cadastro.html">Item 3</a></li> <!-- Link para a página 3 -->
+                <li><a href="Cadastro.html">Cadastro</a></li> <!-- Link para a página 3 -->
                 <li><a href="item4.html">Item 4</a></li> <!-- Link para a página 4 -->
                 <li><a href="item5.html">Item 5</a></li> <!-- Link para a página 5 -->
             </ul>
