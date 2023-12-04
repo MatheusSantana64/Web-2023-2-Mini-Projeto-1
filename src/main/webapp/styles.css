@@ -1,10 +1,12 @@
-body { /* Corpo do documento */
+/* Corpo do documento */
+body {
     margin: 0; /* Remove as margens */
     padding: 0; /* Remove o padding */
     font-family: Arial, sans-serif; /* Define a fonte */
 }
 
-header { /* Cabeçalho */
+/* Cabeçalho */
+header {
     height: 80px;
     font-weight: bold;
     background-color: darkorange; /* Define a cor de fundo */
@@ -16,36 +18,42 @@ header { /* Cabeçalho */
     margin-bottom: 15px;
 }
 
-#logo { /* Logo */
+/* Logo */
+#logo {
     height: 50px; /* Define a altura do logo */
 }
 
+/* Logo quando o mouse está sobre ele */
 #logo:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
 
-nav { /* Navegação */
+/* Navegação */
+nav {
     width: 100%; /* Define a largura como 100% */
     padding: 0 50px; /* Adiciona padding horizontal */
     z-index: 1; /* Adiciona z-index */
     position: relative; /* Adiciona posição relativa para permitir que z-index funcione */
 }
 
-nav ul { /* Lista de navegação */
+/* Lista de navegação */
+nav ul {
     list-style-type: none; /* Remove os marcadores de lista */
     margin: 0; /* Remove as margens */
     padding: 0; /* Remove o padding */
     display: flex; /* Define o display como flex */
 }
 
-nav li { /* Itens de lista da navegação */
+/* Itens de lista da navegação */
+nav li {
     position: relative; /* Define a posição como relativa */
     margin-right: 20px; /* Adiciona margem à direita */
     font-size: 20px; /* Define o tamanho da fonte */
 }
 
-nav li a { /* Links da navegação */
+/* Links da navegação */
+nav li a {
     transition: background-color 1s ease;
     display: block; /* Define o display como block */
     color: white; /* Define a cor do texto */
@@ -54,7 +62,8 @@ nav li a { /* Links da navegação */
     text-decoration: none; /* Remove a decoração do texto */
 }
 
-nav li a:hover { /* Links da navegação quando o mouse está sobre eles */
+/* Links da navegação quando o mouse está sobre eles */
+nav li a:hover {
     transition: font-size 0.5s ease;
     text-decoration: underline;
     font-size: 22px;
@@ -62,7 +71,8 @@ nav li a:hover { /* Links da navegação quando o mouse está sobre eles */
     box-shadow: 0 0 15px rgba(201, 111, 0, 1); /* Adiciona sombra com cor semi-transparente */
 }
 
-nav li ul { /* Submenu */
+/* Submenu */
+nav li ul {
     opacity: 0;
     visibility: hidden;
     position: absolute; /* Define a posição como absoluta */
@@ -72,12 +82,14 @@ nav li ul { /* Submenu */
     transition: all 0.4s ease;
 }
 
-nav li:hover ul { /* Submenu quando o mouse está sobre o item de lista */
+/* Submenu quando o mouse está sobre o item de lista */
+nav li:hover ul {
     opacity: 1;
     visibility: visible;
 }
 
-nav li ul li a { /* Links do submenu */
+/* Links do submenu */
+nav li ul li a {
     font-size: 20px; /* Define o tamanho da fonte */
     background-color: darkorange; /* Define a cor de fundo */
     white-space: nowrap; /* Impede que o texto quebre para a próxima linha */
@@ -89,30 +101,36 @@ nav li ul li a { /* Links do submenu */
     border-left: 1px solid rgba(0,0,0,1); /* Adiciona borda esquerda */
 }
 
-nav li ul li a:hover { /* Links do submenu quando o mouse está sobre eles */
+/* Links do submenu quando o mouse está sobre eles */
+nav li ul li a:hover {
     font-size: 20px; /* Mantém o tamanho da fonte ao passar o mouse */
     background-color: rgb(201, 111, 0);
 }
 
-nav li ul li:last-child { /* Último item do submenu */
+/* Último item do submenu */
+nav li ul li:last-child {
     /* Borda abaixo somente do ultimo subitem */
     border-bottom: 1px solid rgba(0, 0, 0, 1); /* Adiciona borda inferior */
 }
 
+/* Formulário de cadastro de linha */
 .formCadLinha {
-    max-width: 600px; /* Ajuste conforme necessário */
+    max-width: 600px;
     padding: 20px;
     border: 1px solid #c81e1e; /* Borda ao redor do contêiner */
     border-radius: 8px; /* Cantos arredondados do contêiner */
     margin: auto;
 }
 
+/* Formulario */
 form {
 
     border: 1px solid #804242; /* Borda ao redor do formulário */
     padding: 15px;
     border-radius: 8px; /* Cantos arredondados do formulário */
 }
+
+/* Corpo da página de cadastro de linha */
 .bodyCadLinha{
     margin: 0;
     padding: 0;
@@ -121,16 +139,97 @@ form {
     align-items: center;
     justify-content: center;
 }
+
+/* Título da página de cadastro de linha */
 .H1Linha{
     text-align: center;
 }
 
+/* Corpo do documento */
 body {
     background-color: white;
     color: #333;
 }
 
-/* Sobre.html */
+/* CONTATO */
+
+/* Seção superior da página de contato */
+.contact-header {
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    color: darkorange; /* Cor do texto */
+    font-size: 1.5em; /* Tamanho do texto */
+}
+
+/* Título da seção de contato */
+.contact-header h1 {
+    background-color: darkorange; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border-radius: 10px; /* Bordas suaves */
+    padding: 10px; /* Espaçamento interno */
+    display: inline-block; /* Faz com que o elemento h1 seja tratado como um bloco, mas tenha apenas a largura do seu conteúdo */
+}
+
+/* Informações de contato */
+.contact-info {
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Formulário de contato */
+.contact-form {
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 5px;
+}
+
+/* Formulário de contato */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    border-color: darkorange;
+    box-shadow: 0 0 5px darkorange;
+}
+
+/* Campos de entrada e área de texto do formulário de contato */
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botão de envio do formulário de contato */
+.contact-form input[type="submit"] {
+    cursor: pointer;
+    background-color: darkorange;
+    color: white;
+    border: none;
+}
+
+/* Contêiner do formulário de contato e imagem */
+.contact-form-container {
+    display: flex;
+    align-items: flex-start; /* Alinha os itens ao topo */
+}
+
+/* Formulário de contato */
+.contact-form {
+    flex: 1;
+    border-radius: 5px;
+}
+
+/* Imagem na página de contato */
+.contact-image img {
+    height: 340px;
+    box-shadow: 0 0 10px 5px darkorange;
+    border-radius: 10px;
+    margin-right: 40px;
+}
+
+/* SOBRE */
+
+/* Página Sobre */
 .sobre-page .section {
     display: flex;
     justify-content: space-between;
@@ -140,38 +239,45 @@ body {
     width: 70%;
 }
 
+/* Página Sobre */
 .sobre-page .section p {
     line-height: 1.6;
 }
 
+/* Título da página Sobre */
 .sobre-page .section h2 {
     color: darkorange;
     margin-bottom: 10px;
 }
 
+/* Seção esquerda da página Sobre */
 .sobre-page .section-left {
     flex-direction: row;
     transform: translateX(-5%);
     
 }
 
+/* Seção direita da página Sobre */
 .sobre-page .section-right {
     flex-direction: row;
     transform: translateX(5%);
 }
 
+/* Imagem da página Sobre */
 .sobre-page .section img {
     max-width: 100%;
     object-fit: contain;
     height: 200px;
     box-shadow: 0 0 10px 5px darkorange;
+    border-radius: 10px;
 }
 
+/* Conteúdo de texto da página Sobre */
 .sobre-page .text-content {
     width: 75%;
 }
 
-/* footer */
+/* FOOTER */
 
 footer {
     margin-top: 20px;
@@ -187,6 +293,7 @@ footer {
     box-shadow: 0 0 5px 2px darkorange; /* Adiciona sombra */
 }
 
+/* Seção do footer */
 .footer-section {
     width: 30%;
     display: flex;
@@ -194,10 +301,12 @@ footer {
     align-items: center;
 }
 
+/* Imagem da seção do footer */
 .footer-section img {
     height: 30px;
 }
 
+/* Parágrafo da seção do footer */
 .footer-section p {
     font-size: 13px;
     color: #fff;
@@ -205,11 +314,13 @@ footer {
     margin: 5px 0;
 }
 
+/* Ícones sociais da seção do footer */
 .footer-section .social-icons {
     display: flex;
     justify-content: center;
 }
 
+/* Ícones sociais da seção do footer */
 .footer-section .social-icons img {
     width: 30px;
     height: 30px;

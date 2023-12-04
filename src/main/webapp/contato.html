@@ -2,13 +2,127 @@
 <html> <!-- Documento HTML -->
 <head> <!-- Cabeçalho do documento -->
     <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link para o arquivo de estilos CSS -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!-- Define o conjunto de caracteres do documento UTF-8 -->
 </head>
+
 <body> <!-- Corpo do documento -->
     <div id="header"></div> <!-- Divisão onde o cabeçalho será inserido -->
     <!-- Resto do conteúdo da página -->
 
+    <!-- Título e Texto -->
+    <div class="contact-header">
+        <h1>Entre em contato!</h1>
+        <p>Preencha o formulário abaixo para informar um problema, tirar dúvidas ou enviar elogios!</p>
+    </div>
+
+    <!-- Formulário de Contato e Imagem -->
+    <div class="contact-form-container">
+        <!-- Formulário de Contato -->
+        <div class="contact-form">
+            <!-- Início do formulário. A função validateForm() é chamada quando o formulário é enviado -->
+            <form onsubmit="return validateForm()">
+                <!-- Campo para o nome -->
+                <label for="name">Nome:</label><br>
+                <input type="text" id="name" name="name" placeholder="Nome Completo"><br>
+                <!-- Campo para o email. A função validateEmail() é chamada quando o campo perde o foco -->
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" onblur="validateEmail()" placeholder="exemplo@dominio.com"><br>
+                <!-- Campo para o telefone. A função formatPhoneNumber() é chamada quando o valor do campo muda -->
+                <label for="phone">Telefone:</label><br>
+                <input type="tel" id="phone" name="phone" oninput="formatPhoneNumber()" placeholder="(XX) XXXXX-XXXX"><br>
+                <!-- Campo para a mensagem --> 
+                <label for="message">Mensagem:</label><br>
+                <textarea id="message" name="message" placeholder="Digite sua mensagem aqui"></textarea><br>
+                <!-- Botão para enviar o formulário -->
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+
+        <!-- Imagem -->
+        <div class="contact-image">
+            <img src="img/pegando_onibus_mochila.jpg" alt="Foto de mulher entrando no ônibus">
+        </div>
+    </div>
+
+    <!-- Informações de Contato -->
+    <div class="contact-info">
+        <h2>Informações de Contato</h2>
+        <p>Email: contato@urbscar.com.br</p>
+        <p>Telefone: (15) 1234-5678</p>
+        <p>Endereço: Rodovia João Leme dos Santos, km 110 - Sorocaba.</p>
+    </div>
+
     <!-- Divisão onde o footer será inserido -->
     <div id="footer"></div>
+
+    <!-- Início do script -->
+    <script>
+        // Função para validar o email
+        function validateEmail() {
+            // Pega o elemento do email
+            var email = document.getElementById('email');
+            // Expressão regular para validar o email
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            // Se o email não for válido, muda a cor da borda para vermelho
+            if (!re.test(String(email.value).toLowerCase())) {
+                email.style.borderColor = "red";
+            }
+            // Se o email for válido, remove a cor da borda
+            else {
+                email.style.borderColor = "";
+            }
+        }
+    
+        // Função para formatar o número de telefone
+        function formatPhoneNumber() {
+            // Pega o elemento do telefone
+            var phone = document.getElementById('phone');
+            // Remove todos os caracteres que não são dígitos
+            phone.value = phone.value.replace(/[^\d]/g, "");
+            // Formata o número de telefone
+            if (phone.value.length <= 2) {
+                phone.value = phone.value.replace(/(\d{0,2})/, "($1");
+            } else if (phone.value.length <= 6) {
+                phone.value = phone.value.replace(/(\d{2})(\d{0,4})/, "($1) $2");
+            } else if (phone.value.length <= 10) {
+                phone.value = phone.value.replace(/(\d{2})(\d{4})(\d{0,4})/, "($1) $2-$3");
+            } else {
+                phone.value = phone.value.replace(/(\d{2})(\d{5})(\d{0,4})/, "($1) $2-$3");
+            }
+
+            // Expressão regular para validar o telefone
+            var re = /^\(\d{2}\) \d{4,5}-\d{4}$/;
+            // Se o telefone não for válido, muda a cor da borda para vermelho e mostra uma mensagem de erro
+            if (!re.test(phone.value)) {
+                phone.style.borderColor = "red";
+                phone.setCustomValidity("O telefone deve estar no formato (12) 1234-5678 ou (12) 12345-6789");
+            }
+            // Se o telefone for válido, remove a cor da borda e a mensagem de erro
+            else {
+                phone.style.borderColor = "";
+                phone.setCustomValidity("");
+            }
+        }
+
+        // Função para validar o formulário
+        function validateForm() {
+            // Pega os elementos do nome, email, telefone e mensagem
+            var name = document.getElementById('name');
+            var email = document.getElementById('email');
+            var phone = document.getElementById('phone');
+            var message = document.getElementById('message');
+
+            // Se algum dos campos estiver vazio, mostra um alerta e impede o envio do formulário
+            if (name.value === "" || email.value === "" || phone.value === "" || message.value === "") {
+                alert("Todos os campos devem ser preenchidos");
+                return false;
+            }
+
+            // Se todos os campos estiverem preenchidos, mostra um alerta de sucesso e permite o envio do formulário
+            alert("Sua mensagem foi enviada!");
+            return true;
+        }
+    </script>
 
     <!-- Script do header -->
     <script>
@@ -16,7 +130,7 @@
         .then(response => response.text()) // Converte a resposta em texto
         .then(data => document.getElementById('header').innerHTML = data); // Insere o conteúdo do header.html na divisão com id="header"
 
-        fetch('footer.html') // Busca o arquivo header.html
+        fetch('footer.html') // Busca o arquivo footer.html
         .then(response => response.text()) // Converte a resposta em texto
         .then(data => document.getElementById('footer').innerHTML = data); // Insere o conteúdo do footer.html na divisão com id="footer"
     </script>
