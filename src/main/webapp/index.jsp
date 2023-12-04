@@ -4,7 +4,7 @@
 <!DOCTYPE html> <!-- Define o tipo de documento como HTML -->
 <html> <!-- Documento HTML -->
 <head> <!-- Cabeçalho do documento -->
-	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="styles.css">
     <script src="./script.js"></script>
 	<style>
 		table, th, td {
@@ -22,5 +22,6 @@
 	<h1>Exemplo Ajax com XML</h1>
 	<table id="cards"></table>
 
+    <jsp:include page="footer.html"/> <!-- Inclui o footer (Arquivo footer.html) -->
 </body>
 </html>

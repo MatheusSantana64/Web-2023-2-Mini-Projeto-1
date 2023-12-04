@@ -19,6 +19,8 @@ header { /* Cabeçalho */
 nav { /* Navegação */
     width: 100%; /* Define a largura como 100% */
     padding: 0 10px; /* Adiciona padding horizontal */
+    z-index: 1; /* Adiciona z-index */
+    position: relative; /* Adiciona posição relativa para permitir que z-index funcione */
 }
 
 nav ul { /* Lista de navegação */
@@ -98,4 +100,89 @@ form {
 }
 .H1Linha{
     text-align: center;
+}
+
+body {
+    background-color: white;
+    color: #333;
+}
+
+/* Sobre.html */
+.sobre-page .section {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 60%;
+}
+
+.sobre-page .section p {
+    line-height: 1.6;
+}
+
+.sobre-page .section h2 {
+    color: darkorange;
+    margin-bottom: 10px;
+}
+
+.sobre-page .section-left {
+    flex-direction: row;
+    transform: translateX(-10%);
+}
+
+.sobre-page .section-right {
+    flex-direction: row;
+    transform: translateX(10%);
+}
+
+.sobre-page .section img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.sobre-page .text-content {
+    width: 75%;
+}
+
+/* footer */
+
+footer {
+    margin-top: 20px;
+    width: 100%;
+    height: 110px;
+    background: darkorange;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.footer-section {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section img {
+    height: 30px;
+}
+
+.footer-section p {
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.footer-section .social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-section .social-icons img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
