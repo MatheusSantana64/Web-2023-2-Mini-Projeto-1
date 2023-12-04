@@ -135,7 +135,9 @@ body {
     display: flex;
     justify-content: space-between;
     margin: auto;
-    width: 60%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 70%;
 }
 
 .sobre-page .section p {
@@ -149,17 +151,20 @@ body {
 
 .sobre-page .section-left {
     flex-direction: row;
-    transform: translateX(-10%);
+    transform: translateX(-5%);
+    
 }
 
 .sobre-page .section-right {
     flex-direction: row;
-    transform: translateX(10%);
+    transform: translateX(5%);
 }
 
 .sobre-page .section img {
     max-width: 100%;
     object-fit: contain;
+    height: 200px;
+    box-shadow: 0 0 10px 5px darkorange;
 }
 
 .sobre-page .text-content {
