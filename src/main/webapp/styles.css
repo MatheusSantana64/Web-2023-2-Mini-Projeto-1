@@ -326,3 +326,32 @@ footer {
     height: 30px;
     margin-right: 10px;
 }
+
+/* HOME - CARDS */
+#container_cads {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;;
+    margin: 0 10%;
+}
+
+.card {
+    border: 1px solid darkorange;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.card h1 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.card button {
+    float: right;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: orangered;
+    color: white;
+}
