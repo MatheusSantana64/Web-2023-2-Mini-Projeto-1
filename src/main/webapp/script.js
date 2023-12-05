@@ -12,8 +12,7 @@ function myFunction(xml) {
     const xmlDoc = xml.responseXML;
     const x = xmlDoc.getElementsByTagName("ONIBUS");
     let cards = "";
-    for (let i = 0; i < 8; i++) {
-        console.log(i)
+    for (let i = 0; i < 8 && i < x.length; i++) {
         cards += `<div class="card"><h1>` +
                 x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue +
                 "</h1><p>Numero: " +
@@ -22,7 +21,7 @@ function myFunction(xml) {
                 x[i].getElementsByTagName("PARTIDA")[0].childNodes[0].nodeValue +
                 "</p><p>Destino: " +
                 x[i].getElementsByTagName("DESTINO")[0].childNodes[0].nodeValue +
-                `</p><p><button type="button" action="visualizar()"></p></div>`;
+                `</p><button type="button" action="visualizar()">Ver rotas</button></div>`;
     }
     document.getElementById("container_cards").innerHTML = cards;
 }

@@ -19,8 +19,9 @@
 <body> <!-- Corpo do documento -->
     <jsp:include page="header.html"/> <!-- Inclui o header (Arquivo header.html) -->
 
-	<h1>Exemplo Ajax com XML</h1>
-	<table id="cards"></table>
+	<h1 class="title_home">Principais linhas de onibus</h1>
+	<main id="container_cards">
+    </main>
 
     <jsp:include page="footer.html"/> <!-- Inclui o footer (Arquivo footer.html) -->
 </body>

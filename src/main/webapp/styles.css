@@ -328,17 +328,24 @@ footer {
 }
 
 /* HOME - CARDS */
-#container_cads {
+.title_home {
+    font-size: 3rem;
+    text-shadow: 2px 2px 10px orange;
+    text-align: center;
+}
+
+#container_cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 1rem;
     row-gap: 1rem;;
-    margin: 0 10%;
+    margin: 0 10% 3rem;
 }
 
 .card {
     border: 1px solid darkorange;
     border-radius: 1rem;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Inspirado em um vídeo sobre CSS, depois pegar referência */
     padding: 1rem;
 }
 
