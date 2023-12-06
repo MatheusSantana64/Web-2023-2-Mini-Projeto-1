@@ -354,11 +354,7 @@ footer {
     text-align: center;
 }
 
-.card button {
+.card .func {
     float: right;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    background-color: orangered;
-    color: white;
+    color: orangered;
 }

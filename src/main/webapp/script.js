@@ -21,7 +21,9 @@ function myFunction(xml) {
                 x[i].getElementsByTagName("PARTIDA")[0].childNodes[0].nodeValue +
                 "</p><p>Destino: " +
                 x[i].getElementsByTagName("DESTINO")[0].childNodes[0].nodeValue +
-                `</p><button type="button" action="visualizar()">Ver rotas</button></div>`;
+                `</p><p class="func">` +
+                x[i].getElementsByTagName("FUNCIONAMENTO")[0].childNodes[0].nodeValue +
+                `</p></div>`;
     }
     document.getElementById("container_cards").innerHTML = cards;
 }
