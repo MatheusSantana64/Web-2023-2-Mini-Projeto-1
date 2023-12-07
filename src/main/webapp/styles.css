@@ -113,11 +113,83 @@ nav li ul li:last-child {
     border-bottom: 1px solid rgba(0, 0, 0, 1); /* Adiciona borda inferior */
 }
 
+
+/* HOME - CARDS */
+.title_home {
+    font-size: 3rem;
+    text-shadow: 2px 2px 10px orange;
+    text-align: center;
+}
+
+#container_cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;;
+    margin: 0 10% 3rem;
+}
+
+.card {
+    border: 1px solid darkorange;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Inspirado em um vídeo sobre CSS, depois pegar referência */
+    padding: 1rem;
+}
+
+.card h1 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.card .func {
+    float: right;
+    color: orangered;
+}
+
+/* PÁGINA ITINERÁRIOS */
+.h1-itinerarios {
+    font-size: 2.5rem;
+    text-align: center;
+    color: darkorange;
+}
+
+.h2-itinerarios {
+    font-size: 2rem;
+    text-align: center;
+    color: darkorange;
+}
+
+#busSelect {
+    width: 50%;
+    margin: 0 auto 20px;
+    padding: 10px;
+    border: 1px solid darkorange;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    display: block;
+}
+
+#route {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid darkorange;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    height: 500px;
+    font-size: 1.2rem;
+    text-align: center;
+    overflow-y: auto; /* Barra de rolagem caso ultrapasse o espaço */
+    white-space: pre-line; /* Preserva as quebras de linha */
+}
+
+/* PÁGINA CADASTRO DE ITINERÁRIOS */
 /* Formulário de cadastro de linha */
 .formCadLinha {
     max-width: 600px;
     padding: 20px;
-    border: 1px solid #c81e1e; /* Borda ao redor do contêiner */
+    border: 1px solid darkorange; /* Borda ao redor do contêiner */
     border-radius: 8px; /* Cantos arredondados do contêiner */
     margin: auto;
 }
@@ -125,7 +197,7 @@ nav li ul li:last-child {
 /* Formulario */
 form {
 
-    border: 1px solid #804242; /* Borda ao redor do formulário */
+    border: 1px solid darkorange; /* Borda ao redor do formulário */
     padding: 15px;
     border-radius: 8px; /* Cantos arredondados do formulário */
 }
@@ -151,7 +223,7 @@ body {
     color: #333;
 }
 
-/* CONTATO */
+/* PÁGINA CONTATO */
 
 /* Seção superior da página de contato */
 .contact-header {
@@ -227,7 +299,7 @@ body {
     margin-right: 40px;
 }
 
-/* SOBRE */
+/* PÁGINA SOBRE */
 
 /* Página Sobre */
 .sobre-page .section {
@@ -325,36 +397,4 @@ footer {
     width: 30px;
     height: 30px;
     margin-right: 10px;
-}
-
-/* HOME - CARDS */
-.title_home {
-    font-size: 3rem;
-    text-shadow: 2px 2px 10px orange;
-    text-align: center;
-}
-
-#container_cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 1rem;
-    row-gap: 1rem;;
-    margin: 0 10% 3rem;
-}
-
-.card {
-    border: 1px solid darkorange;
-    border-radius: 1rem;
-    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Inspirado em um vídeo sobre CSS, depois pegar referência */
-    padding: 1rem;
-}
-
-.card h1 {
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-.card .func {
-    float: right;
-    color: orangered;
 }

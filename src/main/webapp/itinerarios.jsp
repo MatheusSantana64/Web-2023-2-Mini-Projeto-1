@@ -27,7 +27,8 @@
     <!-- Inclui o header -->
     <jsp:include page="header.html"/>
 	
-    <h1>Itinerarios</h1>
+	<h1 class="h1-itinerarios">Itinerarios</h1>
+	<h2 class="h2-itinerarios">Consulta por itinerários de ônibus</h2>
 	
     <!-- Elemento select para escolher um ônibus -->
     <select id="busSelect">
