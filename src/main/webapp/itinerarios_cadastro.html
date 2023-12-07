@@ -2,6 +2,22 @@
 <html> <!-- Documento HTML -->
 <head> <!-- Cabeçalho do documento -->
     <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link para o arquivo de estilos CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // Quando o documento estiver pronto
+        $(document).ready(function() {
+            // Quando o valor do elemento com id "busSelect" mudar
+            $("#Regiao").change(function() {
+                // Obtém o valor do elemento com id "busSelect"
+                var busName = $(this).val();
+                // Faz uma solicitação GET para a rota "busRoute" (BusRouteServlet) com o nome do ônibus como parâmetro
+                $.get("busRoute", {busName: busName}, function(data) {
+                    // Atualiza o conteúdo do elemento com id "route" com os pontos de parada do ônibus
+                    $("#route").html(data.replace(/\n/g, "<br>"));
+                });
+            });
+        });
+    </script>
 </head>
 <body> <!-- Corpo do documento -->
     <div id="header"></div> <!-- Divisão onde o cabeçalho será inserido -->
@@ -21,6 +37,8 @@
         <p> <h1 class="H1Linha">Cadastro de Linha </h1></p>
        <p> <label for="nomeLinha">Nome da Linha: </label> <input type="text" id="nomeLinha" ><br> </p>
         <p> <label for="numeroLinha">Numero: </label> <input type="text" id="numeroLinha" ><br> </p>
+
+
         <p> <label for="Origem">Partida: </label> <input type="text" id="Origem" ><br> </p>
         <p> <label for="Destino">Destino: </label> <input type="text" id="Destino" ><br> </p>
         <p> <label for="HPartida">Partidas: </label> <input type="text" id="HPartida" ><br> </p>
