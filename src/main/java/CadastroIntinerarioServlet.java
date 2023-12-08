@@ -20,19 +20,19 @@ public class CadastroIntinerarioServlet extends HttpServlet {
         String busreginame = request.getParameter("busRegiao");
         try {
             // Lê o arquivo XML e armazena no doc
-            Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(getServletContext().getRealPath("/itinerarios_onibus.xml"));
+            Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(getServletContext().getRealPath("/pontosporregiao.xml"));
             // Obtém todos os ônibus do arquivo XML
-            NodeList busList = doc.getElementsByTagName("ONIBUS");
+            NodeList regiaoList = doc.getElementsByTagName("REGIAO");
             // Obtém o escritor da resposta
             PrintWriter out = response.getWriter();
             // Itera sobre cada ônibus
-            for (int i = 0; i < busList.getLength(); i++) {
+            for (int i = 0; i < regiaoList.getLength(); i++) {
                 // Obtém o elemento do ônibus atual (Converte o nó em elemento)
-                Element busElement = (Element) busList.item(i);
+                Element regiaoElement = (Element) regiaoList.item(i);
                 // Verifica se o nome do ônibus corresponde ao nome do ônibus da solicitação
-                if (busElement.getElementsByTagName("REGIAO").item(0).getTextContent().equals(busreginame)) {
+                if (regiaoElement.getElementsByTagName(busreginame).item(0).getTextContent().equals(busreginame)) {
                     // Obtém todos os pontos de parada do ônibus
-                    NodeList stopList = busElement.getElementsByTagName("PARADAS").item(0).getChildNodes();
+                    NodeList stopList = regiaoElement.getElementsByTagName("PARADAS").item(0).getChildNodes();
                     // Define a codificação de caracteres da resposta
                     response.setCharacterEncoding("UTF-8");
                     
@@ -46,7 +46,7 @@ public class CadastroIntinerarioServlet extends HttpServlet {
                             out.println(((Element) stop).getTextContent());
                         }
                     }
-
+                    break;
                 }
             }
         } catch (Exception e) {

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<REGIAO>
+    <ZONANORTE>
+        <PARADAS>
+                <PONTO>R. ANTONIO SILVA SALADINO</PONTO>
+                <PONTO>AV. ITAVUVU</PONTO>
+                <PONTO>R. ORLANDO DE SOUZA MORAES</PONTO>
+                <PONTO>R. EUCLIDES ANTONIO SCAPOL</PONTO>
+                <PONTO>R. ANTONIETA DA SILVA GOMES</PONTO>
+                <PONTO>AV. LUIZ FERRAZ DE SAMPAIO JUNIOR</PONTO>
+                <PONTO>R. ARAÇOIABA</PONTO>
+                <PONTO>R. DOM ANTONIO ALVARENGA</PONTO>
+        </PARADAS>       
+    </ZONANORTE>
+    <ZONASUL>
+        <PARADAS>
+                <PONTO>AV. LUIZ FERRAZ DE SAMPAIO JUNIOR</PONTO>
+                <PONTO>R. FRANCISCO SCARPA</PONTO>
+                <PONTO>AV. GENERAL CARNEIRO</PONTO>
+                <PONTO>AV. ARMANDO PANNUNZIO</PONTO>
+                <PONTO>R. HORÁCIO CENCI</PONTO>
+        </PARADAS>
+    </ZONASUL>
+    <ZONALESTE>
+        <PARADAS>
+                <PONTO>AV. LUIZ FERRAZ DE SAMAPIO JUNIOR</PONTO>
+                <PONTO>R. FRANCISCO SCARPA</PONTO>
+                <PONTO>AV. AFONSO VERGUEIRO</PONTO>
+                <PONTO>R. SOUZA PEREIRA</PONTO>
+                <PONTO>R. ÁLVARO SOARES</PONTO>
+                <PONTO>AV. DOM AGUIRRE</PONTO>
+                <PONTO>AV. LUIZ FERRAZ DE SAMAPIO JUNIOR</PONTO>
+                <PONTO>R. FRANCISCO SCARPA</PONTO>
+                <PONTO>AV. AFONSO VERGUEIRO</PONTO>
+                <PONTO>R. SOUZA PEREIRA</PONTO>
+                <PONTO>R. ÁLVARO SOARES</PONTO>
+                <PONTO>AV. DOM AGUIRRE</PONTO>
+                <PONTO>ROD. SEN. JOSÉ ERMIRIO DE MORAES</PONTO>
+                <PONTO>R. JOAQUIM MACHADO</PONTO>
+                <PONTO>R. JOÃO MACHADO</PONTO>
+                <PONTO>R. LEOPOLDO MACHADO</PONTO>
+                <PONTO>AV. SÃO PAULO</PONTO>
+                <PONTO>R. LAUREANO BALDY</PONTO>
+                <PONTO>R. AMÉRICO BRASILIENSE</PONTO>
+                <PONTO>R. THEODORO MENDES</PONTO>
+                <PONTO>R. MAIRINQUE</PONTO>
+                <PONTO>R. ARAÇOIABA</PONTO>
+                <PONTO>R. DOM ANTÔNIO ALVARENGA</PONTO>
+                <PONTO>R. SANTA ROSÁLIA</PONTO>
+                <PONTO>R. APARECID</PONTO>
+                <PONTO>R. 28 DE OUTUBRO ( S.S.P.M.S. )</PONTO>
+                <PONTO>R. ANTÔNIO FERNANDES</PONTO>
+                <PONTO>R. JOÃO DELGADO HIDALGO</PONTO>
+                <PONTO>R. DIRCEU DALMEIDA</PONTO>
+                <PONTO>R. ESTÁCIO DE SÁ</PONTO>
+        </PARADAS>
+    </ZONALESTE>   
+    <ZONAOESTE>
+        <PARADAS>
+                <PONTO>R. LEOPOLDO MACHADO</PONTO>
+                <PONTO>AV. JUSCELINO K. DE OLIVEIRA</PONTO>
+                <PONTO>AV. COM. PEREIRA INÁCIO</PONTO>
+                <PONTO>R. DOS ANDRADAS</PONTO>
+                <PONTO>R. BEATRIZ DE MORAES LEITE FOGAÇA</PONTO>
+                <PONTO>R. VISCONDE DO RIO BRANCO</PONTO>
+                <PONTO>R. LEOPOLDO MACHADO</PONTO>
+                <PONTO>R. SANTA CRUZ</PONTO>
+                <PONTO>R. MAJOR JOÃO LÍCIO</PONTO>
+                <PONTO>AV. JUSCELINO K. DE OLIVEIRA</PONTO>
+                <PONTO>AV. MOREIRA CESAR</PONTO>
+                <PONTO>PÇA. NOVE DE JULHO</PONTO>
+                <PONTO>AV. GAL. CARNEIRO</PONTO>
+                <PONTO>AV. ARMANDO PANNUNZIO</PONTO>
+                <PONTO>ROD. JOÃO LEME DOS SANTOS</PONTO>
+                <PONTO>R. WALDOMIRO EUZEBIO DE CAMARGO BARROS</PONTO>
+                <PONTO>R. BENEDITO DOS SANTOS</PONTO>
+                <PONTO>ROD. RAPOSO TAVARES</PONTO>
+        </PARADAS>
+    </ZONAOESTE>
+</REGIAO>
