@@ -10,6 +10,7 @@
             $("#Regiao").change(function() {
                 // Obtém o valor do elemento com id "busSelect"
                 var busName = $(this).val();
+                $("#pontos").val("");
                 // Faz uma solicitação GET para a rota "busRoute" (BusRouteServlet) com o nome do ônibus como parâmetro
                 $.get("cadIntinerario", {busreginame: busName}, function(data) {
                     var currentContent = $("#pontos").val();

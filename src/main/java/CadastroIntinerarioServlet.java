@@ -17,20 +17,19 @@ public class CadastroIntinerarioServlet extends HttpServlet {
     // Método para lidar com solicitações GET
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Obtém o nome do ônibus da solicitação
-        String busreginame = request.getParameter("busRegiao");
+        String busreginame = request.getParameter("busreginame");
         try {
             // Lê o arquivo XML e armazena no doc
             Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(getServletContext().getRealPath("/pontosporregiao.xml"));
             // Obtém todos os ônibus do arquivo XML
-            NodeList regiaoList = doc.getElementsByTagName("REGIAO");
+            NodeList regiaoList = doc.getElementsByTagName(busreginame);
             // Obtém o escritor da resposta
             PrintWriter out = response.getWriter();
             // Itera sobre cada ônibus
-            for (int i = 0; i < regiaoList.getLength(); i++) {
+          
                 // Obtém o elemento do ônibus atual (Converte o nó em elemento)
-                Element regiaoElement = (Element) regiaoList.item(i);
-                // Verifica se o nome do ônibus corresponde ao nome do ônibus da solicitação
-                if (regiaoElement.getElementsByTagName(busreginame).item(0).getTextContent().equals(busreginame)) {
+                Element regiaoElement = (Element) regiaoList.item(0);
+             
                     // Obtém todos os pontos de parada do ônibus
                     NodeList stopList = regiaoElement.getElementsByTagName("PARADAS").item(0).getChildNodes();
                     // Define a codificação de caracteres da resposta
@@ -46,9 +45,9 @@ public class CadastroIntinerarioServlet extends HttpServlet {
                             out.println(((Element) stop).getTextContent());
                         }
                     }
-                    break;
-                }
-            }
+                    
+                
+            
         } catch (Exception e) {
             // Imprime a pilha de chamadas da exceção
             e.printStackTrace();
