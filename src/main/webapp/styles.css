@@ -185,6 +185,13 @@ nav li ul li:last-child {
 }
 
 /* PÁGINA CADASTRO DE ITINERÁRIOS */
+#checkboxContainer {
+    max-height: 100px; /* Altura máxima da div antes de exibir a barra de rolagem */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
+    border: 2px solid darkorange; /* Adiciona uma borda para destacar a área da div */
+    padding: 10px; /* Adiciona algum espaçamento interno */
+  }
+
 /* Formulário de cadastro de linha */
 .formCadLinha {
     max-width: 600px;
@@ -214,8 +221,9 @@ form {
 
 /* Título da página de cadastro de linha */
 .H1Linha{
+    font-size: 2.5rem;
     text-align: center;
-}
+    color: darkorange;}
 
 /* Corpo do documento */
 body {

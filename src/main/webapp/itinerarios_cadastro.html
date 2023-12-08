@@ -10,16 +10,34 @@
             $("#Regiao").change(function() {
                 // Obtém o valor do elemento com id "busSelect"
                 var busName = $(this).val();
-                $("#pontos").val("");
                 // Faz uma solicitação GET para a rota "busRoute" (BusRouteServlet) com o nome do ônibus como parâmetro
                 $.get("cadIntinerario", {busreginame: busName}, function(data) {
-                    var currentContent = $("#pontos").val();
-
                 // Acrescenta o novo conteúdo ao conteúdo existente (com uma quebra de linha entre eles)
-                var newContent = currentContent + data + "\n";
+                var newContent = data + "\n";
+                var linhas = newContent.split("\n");
+                
+                var container = document.getElementById('checkboxContainer');
+                container.innerHTML = ''; // Limpa o conteúdo do container
 
-                // Atualiza o conteúdo do textarea
-                $("#pontos").val(newContent);
+
+                    for (var i = 0; i < linhas.length; i++) {
+                        var linha = linhas[i].trim(); // Remove espaços em branco extras
+                        if (linha === "") continue; // Ignora linhas em branco
+
+                        var checkbox = document.createElement('input');
+                        checkbox.type = 'checkbox';
+                        checkbox.id = 'checkbox_' + i; // Use um ID único para cada checkbox
+                        checkbox.value = linha; // O valor do checkbox é a linha inteira
+
+                        var label = document.createElement('label');
+                        label.htmlFor = 'checkbox_' + i;
+                        label.appendChild(document.createTextNode(linha));
+
+                        container.appendChild(checkbox);
+                        container.appendChild(label);
+                        container.appendChild(document.createElement('br')); // Adiciona uma quebra de linha
+                    }
+                                    
                 });
             });
         });
@@ -38,16 +56,18 @@
         <p> <label for="Origem">Partida: </label> <input type="text" id="Origem" ><br> </p>
         <p> <label for="Destino">Destino: </label> <input type="text" id="Destino" ><br> </p>
         <p> <label for="HPartida">Partidas: </label> <input type="text" id="HPartida" ><br> </p>
-        <p><label>selecione: </label></p><select id="Regiao" name="regiao">
+        <p><label>Escolha a regiao: </label><select id="Regiao" name="regiao">
             <option value="ZONANORTE">ZONA NORTE</option>
             <option value="ZONASUL">ZONA SUL</option>
             <option value="ZONALESTE">ZONA LESTE</option>
             <option value="ZONAOESTE">ZONA OESTE</option>
-
         </select>
-        <p>
-            <label>Pontos</label><br><textarea id="pontos" readonly></textarea>
         </p>
+        <p>
+            <label>Pontos:</label><br>
+        </p>
+        <div id="checkboxContainer"></div>
+
         <p><label>Funcionamento:</label><br>
             <label for="Dom">Dom</label><input type="checkbox" id="Dom">
             <label for="Seg">Seg</label><input type="checkbox" id="Seg">
