@@ -79,7 +79,7 @@
         </p>
         <div id="checkboxContainer"></div>
 
-        <p><label>Funcionamento:</label><br>
+        <p><label>Funcionamento:</label> <br>
             <label for="Dom">Dom</label><input type="checkbox" id="Dom">
             <label for="Seg">Seg</label><input type="checkbox" id="Seg">
             <label for="Ter">Ter</label><input type="checkbox" id="Ter">
@@ -88,6 +88,10 @@
             <label for="Sex">Sex</label><input type="checkbox" id="Sex">
             <label for="Sab">Sab</label><input type="checkbox" id="Sab">
         </p>
+        <br>
+        <p> <input type="submit" value="Cadastrar" id="Cadastrar" onclick=enviarFormulario()> </p>
+        <!-- mensagem dizendo que o cadastro foi efetuado com sucesso-->
+
     </form>
     </div>
     <!-- Divisão onde o footer será inserido -->
@@ -102,6 +106,12 @@
         fetch('footer.html') // Busca o arquivo header.html
         .then(response => response.text()) // Converte a resposta em texto
         .then(data => document.getElementById('footer').innerHTML = data); // Insere o conteúdo do footer.html na divisão com id="footer"
+    
+    document.getElementById('CadastroDeLinhas').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Cadastro realizado com sucesso!');
+    });
+
     </script>
 </body>
 </html>

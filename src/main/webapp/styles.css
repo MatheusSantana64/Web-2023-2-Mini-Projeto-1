@@ -225,7 +225,7 @@ form {
     text-shadow: 2px 2px 10px orange;
     text-align: center;
 }
-.bodyCadLinha input[type="text"]{
+.bodyCadLinha input[type="text"],#Origem{
     width: 100%;
     border: none;
     border-bottom: 1px solid darkorange;
@@ -233,13 +233,13 @@ form {
     font-size: 15px;
 
 }
-#Origem{
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid darkorange;
-    background: transparent;
-    font-size: 15px;
+.bodyCadLinha #Cadastrar{
+width: 100%;
+border: 2px solid darkorange;
+border-radius: 25px;
+padding: 5px;    
 }
+
 /* Corpo do documento */
 body {
     background-color: white;
