@@ -7,12 +7,12 @@
     <script>
         // Quando o documento estiver pronto
         $(document).ready(function() {
-            // Quando o valor do elemento com id "busSelect" mudar
+            // Quando o valor do elemento com id "Regiao" mudar
             $("#Regiao").change(function() {
-                // Obtém o valor do elemento com id "busSelect"
-                var busName = $(this).val();
+                // Obtém o valor do elemento com id "Regiao"
+                var regiaoName = $(this).val();
                 // Faz uma solicitação GET para a rota "busRoute" (BusRouteServlet) com o nome do ônibus como parâmetro
-                $.get("cadIntinerario", {busreginame: busName}, function(data) {
+                $.get("cadIntinerario", {busreginame: regiaoName}, function(data) {
                 // Acrescenta o novo conteúdo ao conteúdo existente (com uma quebra de linha entre eles)
                 var newContent = data + "\n";
                 var linhas = newContent.split("\n");
@@ -89,7 +89,7 @@
             <label for="Sab">Sab</label><input type="checkbox" id="Sab">
         </p>
         <br>
-        <p> <input type="submit" value="Cadastrar" id="Cadastrar" onclick=enviarFormulario()> </p>
+        <p> <input type="submit" value="Cadastrar" id="Cadastrar"> </p>
         <!-- mensagem dizendo que o cadastro foi efetuado com sucesso-->
 
     </form>
