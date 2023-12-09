@@ -133,6 +133,7 @@ nav li ul li:last-child {
 .card {
     border: 1px solid darkorange;
     border-radius: 1rem;
+    /* o valor do box-shadow foi inspirado no vídeo https://youtu.be/w1J6gY40yMo?si=xAHzWBdK-MrwO8Kw&t=16006, onde em uma das aulas é ensinado a utilizar a propriedade box-shadow, e foi dado a dica do padrão utilizado a baixo, muito usado para estilizar cards*/
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Inspirado em um vídeo sobre CSS, depois pegar referência */
     padding: 1rem;
 }
