@@ -116,6 +116,7 @@ nav li ul li:last-child {
 
 /* HOME - CARDS */
 .title_home {
+    color: #555;
     font-size: 3rem;
     text-shadow: 2px 2px 10px orange;
     text-align: center;
@@ -144,6 +145,69 @@ nav li ul li:last-child {
 .card .func {
     float: right;
     color: orangered;
+}
+
+/* FAQ */
+.title_faq {
+    color: #555;
+    font-size: 3rem;
+    text-shadow: 2px 2px 10px orange;
+    text-align: center;
+}
+
+.container_perguntas {
+    margin: 0 10% 3rem;
+}
+
+.pergunta {
+    background-color: darkorange;
+    color: white;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    padding: 1rem 2rem 0.5rem;
+    overflow: auto;
+    margin: 1rem;
+}
+
+.pergunta span.chevron_down {
+    font-size: 2rem;
+    transform: translateY(-12px);
+    float: right;
+}
+
+.resposta {
+    display: none;
+    overflow: auto;
+    margin: 0 2rem 2rem;
+    line-height: 1.6;
+}
+
+.pergunta:hover {
+    cursor: pointer;
+}
+
+.pergunta:active {
+    background-color: orange;
+}
+
+.resp-baixar {
+    padding: 0 10%;
+}
+
+.resp-baixar p {
+    display: inline-block;
+    width: 70%;
+}
+
+.baixar {
+    width: 20%;
+    margin-right: 2rem;
+    max-width: 600px;
+}
+
+.celular {
+    float: right;
+    width: 20%;
 }
 
 /* PÁGINA ITINERÁRIOS */

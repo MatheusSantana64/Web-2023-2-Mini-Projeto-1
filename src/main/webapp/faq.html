@@ -1,0 +1,73 @@
+<!DOCTYPE html> <!-- Define o tipo de documento como HTML -->
+<html> <!-- Documento HTML -->
+<head> <!-- Cabeçalho do documento -->
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link para o arquivo de estilos CSS -->
+    <script src="./script-faq.js" defer></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body> <!-- Corpo do documento -->
+    <div id="header"></div> <!-- Divisão onde o cabeçalho será inserido -->
+    <!-- Resto do conteúdo da página -->
+
+    <h1 class="title_faq">Perguntas Frequentes</h1>
+
+    <main class="container_perguntas">
+        <div class="pergunta" data-ordem="1">
+            Como o Urbscar funciona?
+            <span class="chevron_down">&#8964;</span>
+        </div>
+        <div class="resposta">
+            Pelo Urbscar você pode conferir o itinerário dos ônibus da sua cidade, assim como saber em quais pontos o ônibus de seu interesse passa. No aplicativo também é possível saber em quais dias ele estará em funcionamento, a região da cidade por qual ele transita e qual sua tarifa.
+        </div>
+
+        <div class="pergunta" data-ordem="2">
+            Onde posso ver o itinerário do meu ônibus?
+            <span class="chevron_down">&#8964;</span>
+        </div>
+        <div class="resposta">
+            Para ver o itinerário do seu ônibus, basta posicionar o mouse em cima da sessão "Rotas" no menu superior e teclar em "itinerários". Por fim, basta selecionar o ônibus que você deseja visualizar.
+        </div>
+
+        <div class="pergunta" data-ordem="3">
+            Como posso ter acesso ao Urbscar?
+            <span class="chevron_down">&#8964;</span>
+        </div>
+        <div class="resposta resp-baixar">
+            <img src="./img/celular.png" alt="celular com o site da urbscar na tela" class="celular">
+            <p>
+                Você pode usar o site direto por um navegador, ou baixar no seu celular nas principais lojas de aplicativos.
+            </p>
+            <img src="./img/appstore.png" alt="baixar na app store" class="baixar">
+            <img src="./img/googleplay.png" alt="baixar na google play" class="baixar">
+        </div>
+
+        <div class="pergunta" data-ordem="4">
+            Quem desenvolveu esse site?
+            <span class="chevron_down">&#8964;</span>
+        </div>
+        <div class="resposta">
+            Os desenvolvedores desse site são:
+            <ul>
+                <li>Matheus Cerqueira</li>
+                <li>Matheus de Araujo</li>
+                <li>Murillo Justino</li>
+            </ul>
+            Para ver mais detalhes sobre nós, acesse <a href=".sobre">Sobre</a>.
+        </div>
+    </main>
+
+    <!-- Divisão onde o footer será inserido -->
+    <div id="footer"></div>
+
+    <!-- Script do header -->
+    <script>
+        fetch('header.html') // Busca o arquivo header.html
+        .then(response => response.text()) // Converte a resposta em texto
+        .then(data => document.getElementById('header').innerHTML = data); // Insere o conteúdo do header.html na divisão com id="header"
+
+        fetch('footer.html') // Busca o arquivo header.html
+        .then(response => response.text()) // Converte a resposta em texto
+        .then(data => document.getElementById('footer').innerHTML = data); // Insere o conteúdo do footer.html na divisão com id="footer"
+    </script>
+</body>
+</html>
