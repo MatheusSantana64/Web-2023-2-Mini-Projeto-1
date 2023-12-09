@@ -12,9 +12,11 @@
     <h1 class="title_faq">Perguntas Frequentes</h1>
 
     <main class="container_perguntas">
+        <!--Todos os clicks que ocorrerem nas divs dentro desse elemento main ativarão um evento no javascript (script-faq.js) 
+            data-ordem possui como valor a ordem em que a pergunta foi definida, esse dataset é usado no javascript para saber qual resposta deve ser mostrada ou ocultada. -->
         <div class="pergunta" data-ordem="1">
             Como o Urbscar funciona?
-            <span class="chevron_down">&#8964;</span>
+            <span class="chevron_down">&#8964;</span> <!-- esse símbolo é um "menor" apontando para baixo -->
         </div>
         <div class="resposta">
             Pelo Urbscar você pode conferir o itinerário dos ônibus da sua cidade, assim como saber em quais pontos o ônibus de seu interesse passa. No aplicativo também é possível saber em quais dias ele estará em funcionamento, a região da cidade por qual ele transita e qual sua tarifa.
@@ -52,8 +54,18 @@
                 <li>Matheus de Araujo</li>
                 <li>Murillo Justino</li>
             </ul>
-            Para ver mais detalhes sobre nós, acesse <a href=".sobre">Sobre</a>.
+            Para ver mais detalhes sobre nós, acesse <a href="./sobre.html">Sobre</a>.
         </div>
+
+        <!-- Caso deseje adicionar uma nova pergunta, basta seguir a ordem corretamente em data-ordem e usar as classes pergunta e resposta -->
+        <!-- <div class="pergunta" data-ordem="5">
+            ... sua pergunta
+            <span class="chevron_down">&#8964;</span>
+        </div>
+        <div class="resposta">
+            ... sua resposta
+        </div> -->
+
     </main>
 
     <!-- Divisão onde o footer será inserido -->
