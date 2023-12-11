@@ -4,55 +4,16 @@
     <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link para o arquivo de estilos CSS -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!-- Define o conjunto de caracteres do documento UTF-8 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-        // Quando o documento estiver pronto
-        $(document).ready(function() {
-            // Quando o valor do elemento com id "Regiao" mudar
-            $("#Regiao").change(function() {
-                // Obtém o valor do elemento com id "Regiao"
-                var regiaoName = $(this).val();
-                // Faz uma solicitação GET para a rota "busRoute" (BusRouteServlet) com o nome do ônibus como parâmetro
-                $.get("cadIntinerario", {busreginame: regiaoName}, function(data) {
-                // Acrescenta o novo conteúdo ao conteúdo existente (com uma quebra de linha entre eles)
-                var newContent = data + "\n";
-                var linhas = newContent.split("\n");
-                
-                var container = document.getElementById('checkboxContainer');
-                container.innerHTML = ''; // Limpa o conteúdo do container
-
-
-                    for (var i = 0; i < linhas.length; i++) {
-                        var linha = linhas[i].trim(); // Remove espaços em branco extras
-                        if (linha === "") continue; // Ignora linhas em branco
-
-                        var checkbox = document.createElement('input');
-                        checkbox.type = 'checkbox';
-                        checkbox.id = 'checkbox_' + i; // Use um ID único para cada checkbox
-                        checkbox.value = linha; // O valor do checkbox é a linha inteira
-
-                        var label = document.createElement('label');
-                        label.htmlFor = 'checkbox_' + i;
-                        label.appendChild(document.createTextNode(linha));
-
-                        container.appendChild(checkbox);
-                        container.appendChild(label);
-                        container.appendChild(document.createElement('br')); // Adiciona uma quebra de linha
-                    }
-                                    
-                });
-            });
-        });
-    </script>
 </head>
 <body> <!-- Corpo do documento -->
     <div id="header"></div> <!-- Divisão onde o cabeçalho será inserido -->
     <!-- Resto do conteúdo da página -->
     <div class="bodyCadLinha">
-   
+    
     <form class ="formCadLinha" id="CadastroDeLinhas">
-   
+    
         <p> <h1 class="H1Linha">Cadastro de Linha </h1></p>
-       <p> <label for="nomeLinha">Nome da Linha </label> <input type="text" id="nomeLinha" ><br> </p>
+        <p> <label for="nomeLinha">Nome da Linha </label> <input type="text" id="nomeLinha" ><br> </p>
         <p> <label for="numeroLinha">Numero </label> <input type="text" id="numeroLinha" ><br> </p>
         <p> 
             <label for="Origem">Partida </label> 
@@ -63,7 +24,6 @@
                 <option value="TSP">
                 <option value="TERMINAL VITORIA REGIA">
             </datalist>
-            <br> 
         </p>
         <p> <label for="Destino">Destino </label> <input type="text" id="Destino" ><br> </p>
         <p><label>Escolha a região: </label><select id="Regiao" name="regiao">
@@ -97,21 +57,124 @@
     <!-- Divisão onde o footer será inserido -->
     <div id="footer"></div>
 
-    <!-- Script do header -->
+    <!-- Scripts -->
     <script>
+        // Header
         fetch('header.html') // Busca o arquivo header.html
         .then(response => response.text()) // Converte a resposta em texto
         .then(data => document.getElementById('header').innerHTML = data); // Insere o conteúdo do header.html na divisão com id="header"
 
+        // Footer
         fetch('footer.html') // Busca o arquivo header.html
         .then(response => response.text()) // Converte a resposta em texto
         .then(data => document.getElementById('footer').innerHTML = data); // Insere o conteúdo do footer.html na divisão com id="footer"
     
-    document.getElementById('CadastroDeLinhas').addEventListener('submit', function(event) {
-        event.preventDefault();
-        alert('Cadastro realizado com sucesso!');
-    });
+        // Quando o documento estiver pronto
+        $(document).ready(function() {
+            // Quando o valor do elemento com id "Regiao" mudar
+            $("#Regiao").change(function() {
+                // Obtém o valor do elemento com id "Regiao"
+                var regiaoName = $(this).val();
+                // Faz uma solicitação GET para a rota "busRoute" (BusRouteServlet) com o nome do ônibus como parâmetro
+                $.get("cadIntinerario", {busreginame: regiaoName}, function(data) {
+                // Acrescenta o novo conteúdo ao conteúdo existente (com uma quebra de linha entre eles)
+                var newContent = data + "\n";
+                var linhas = newContent.split("\n");
+                
+                var container = document.getElementById('checkboxContainer');
+                container.innerHTML = ''; // Limpa o conteúdo do container
 
+
+                    for (var i = 0; i < linhas.length; i++) {
+                        var linha = linhas[i].trim(); // Remove espaços em branco extras
+                        if (linha === "") continue; // Ignora linhas em branco
+
+                        var checkbox = document.createElement('input');
+                        checkbox.type = 'checkbox';
+                        checkbox.id = 'checkbox_' + i; // Use um ID único para cada checkbox
+                        checkbox.value = linha; // O valor do checkbox é a linha inteira
+
+                        var label = document.createElement('label');
+                        label.htmlFor = 'checkbox_' + i;
+                        label.appendChild(document.createTextNode(linha));
+
+                        container.appendChild(checkbox);
+                        container.appendChild(label);
+                        container.appendChild(document.createElement('br')); // Adiciona uma quebra de linha
+                    }                                 
+                });
+            });
+        });
+
+        // Listener para o evento "submit" do formulário
+        document.getElementById('CadastroDeLinhas').addEventListener('submit', function(event) {
+            // Previne o envio do formulário para validar no lado do cliente antes de enviar para o servidor
+            event.preventDefault();
+            // Se o formulário for válido, envia para o servidor
+            if (validateForm()) {
+                this.submit();
+            }
+        });
+
+        // Função para validar o formulário
+        function validateForm() {
+            // Pega os elementos do nome da linha, número da linha, origem, destino e região
+            var nomeLinha = document.getElementById('nomeLinha');
+            var numeroLinha = document.getElementById('numeroLinha');
+            var origem = document.getElementById('Origem');
+            var destino = document.getElementById('Destino');
+            var regiao = document.getElementById('Regiao');
+
+            // Pega todos os checkboxes de pontos de parada e dias de funcionamento
+            var pontosParada = document.getElementById('checkboxContainer').getElementsByTagName('input');
+            var diasFuncionamento = document.querySelectorAll('input[type="checkbox"][id^="Dom"],input[type="checkbox"][id^="Seg"],input[type="checkbox"][id^="Ter"],input[type="checkbox"][id^="Qua"],input[type="checkbox"][id^="Qui"],input[type="checkbox"][id^="Sex"],input[type="checkbox"][id^="Sab"]');
+
+            // Verifica se pelo menos um checkbox de ponto de parada e um checkbox de dia de funcionamento foram selecionados
+            var pontoParadaSelecionado = Array.from(pontosParada).some(checkbox => checkbox.checked);
+            var diaFuncionamentoSelecionado = Array.from(diasFuncionamento).some(checkbox => checkbox.checked);
+
+            // Se algum dos campos estiver vazio, ou se nenhum ponto de parada ou dia de funcionamento foram selecionados, mostra um alerta e impede o envio do formulário
+            if (nomeLinha.value === "" || numeroLinha.value === "" || origem.value === "" || destino.value === "" || regiao.value === "" || !pontoParadaSelecionado || !diaFuncionamentoSelecionado) {
+                alert("Falha no cadastro: Todos os campos devem ser preenchidos.");
+                return false;
+            }
+
+            // Verifica se o número da linha é realmente um número
+            if (isNaN(numeroLinha.value)) {
+                alert("Falha no cadastro: O número da linha deve ser um número.");
+                return false;
+            }
+
+            // Carrega o arquivo XML
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "itinerarios_onibus.xml", false);
+            xhttp.send();
+            var xmlDoc = xhttp.responseXML;
+
+            // Obtém todos os ônibus do arquivo XML
+            var onibusList = xmlDoc.getElementsByTagName("ONIBUS");
+
+            // Itera sobre cada ônibus
+            for (var i = 0; i < onibusList.length; i++) {
+                // Obtém o nome e o número do ônibus atual
+                var nomeOnibus = onibusList[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue;
+                var numeroOnibus = onibusList[i].getElementsByTagName("NUMERO")[0].childNodes[0].nodeValue;
+
+                // Verifica se o nome ou o número do ônibus já existe
+                if (nomeLinha.value === nomeOnibus) {
+                    alert("Falha no cadastro: Já existe um ônibus com este nome!");
+                    return false;
+                }
+                else if (numeroLinha.value === numeroOnibus) {
+                    alert("Falha no cadastro: Já existe um ônibus com este número!");
+                    return false;
+                }
+            }
+
+            // Se todos os campos estiverem preenchidos e o nome ou número do ônibus não existir, mostra um alerta de sucesso e permite o envio do formulário
+            alert("Cadastro realizado com sucesso!");
+            return true;
+        }
     </script>
 </body>
 </html>
