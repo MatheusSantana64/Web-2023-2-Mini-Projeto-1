@@ -14,24 +14,25 @@ import java.io.PrintWriter;
 // Define a rota do Servlet
 @WebServlet("/cadIntinerario")
 public class CadastroIntinerarioServlet extends HttpServlet {
+
     // Método para lidar com solicitações GET
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Obtém o nome do ônibus da solicitação
+        // Obtém o nome da região da solicitação
         String busreginame = request.getParameter("busreginame");
         try {
             // Lê o arquivo XML e armazena no doc
             Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(getServletContext().getRealPath("/pontos_regiao.xml"));
-            // Obtém todos os ônibus do arquivo XML
+            // Obtém todas as regiões do arquivo XML
             NodeList regiaoList = doc.getElementsByTagName(busreginame);
             // Define o tipo de conteúdo da resposta e a codificação de caracteres
             response.setContentType("text/html; charset=UTF-8");
             // Obtém o escritor da resposta
             PrintWriter out = response.getWriter();
 
-            // Obtém o elemento do ônibus atual (Converte o nó em elemento)
+            // Obtém o elemento do região atual (Converte o nó em elemento)
             Element regiaoElement = (Element) regiaoList.item(0);
 
-            // Obtém todos os pontos de parada do ônibus
+            // Obtém todos os pontos de parada da região
             NodeList stopList = regiaoElement.getElementsByTagName("PARADAS").item(0).getChildNodes();
             // Define a codificação de caracteres da resposta
             response.setCharacterEncoding("UTF-8");
